@@ -31,7 +31,21 @@ public class WhileLoops {
     */
    public static int countEvensUpTo(int n) {
        // YOUR CODE HERE
-       return -1;
+       if (n < 1){
+        return 0;
+       }
+       if (n == 1){
+        return 0;
+       }
+       int count = 1;
+       int count2 = 0;
+       while (count < n){
+            count++;
+            if (count % 2 == 0){
+                count2++;
+            }
+       }
+       return count2;
    }
 
 
@@ -48,7 +62,12 @@ public class WhileLoops {
     */
    public static int digitSum(int n) {
        // YOUR CODE HERE
-       return -1;
+       int sum = 0;
+       while (n != 0){
+            sum += n % 10;
+            n = n / 10;
+       }
+       return sum;
    }
 
 
@@ -73,7 +92,19 @@ public class WhileLoops {
     */
    public static int countDownBy(int start, int step) {
        // YOUR CODE HERE
-       return -1;
+       if (step <= 0){
+            return 0;
+       }
+       if (step > start){
+            return start;
+       }
+       while (start > 0){
+            start = start - step;
+       }
+       if (start < 0){
+            return start + step;
+       }
+       return start;
    }
 
 
@@ -106,7 +137,15 @@ public class WhileLoops {
     */
    public static int weeksToReachGoal(int startBalance, int weeklyDeposit, int goalBalance) {
        // CODE HERE
-       return -1;
+       int count =0;
+       if (startBalance >= goalBalance){
+            return 0;
+       }
+       while (startBalance < goalBalance){
+            startBalance += weeklyDeposit;
+            count ++;
+       }
+       return count;
    }
 
 
@@ -141,7 +180,15 @@ public class WhileLoops {
     */
    public static int minutesUntilDead(int startPercent, int perMinuteUse) {
        //YOUR CODE HERE
-       return -1;
+       if (startPercent <= 0 || perMinuteUse <= 0){
+            return 0;
+       }
+       int count =0;
+       while (startPercent > 0){
+            startPercent = startPercent - perMinuteUse;
+            count++;
+       }
+       return count;
    }
 }
 
